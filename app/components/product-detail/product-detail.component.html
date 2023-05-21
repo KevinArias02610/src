@@ -1,0 +1,15 @@
+<div class="modal">
+    <div class="modal-content">
+        <div>
+            <h2>{{ selectedElement.title }}</h2>
+            <p>{{ selectedElement.description }}</p>
+            <p><b>{{selectedElement.price }}</b></p>
+            <img [src]="selectedElement.images" alt="Imagen" class="modal-image">
+        </div>
+        <hr>
+        <div>
+            <button (click)="closeModal()" class="modal-button"><i class="icon-remove"></i> Cerrar</button>
+            <button class="cart-icon"><i class="icon-shopping-cart"></i> Agregar al carrito</button>
+        </div>
+    </div>
+</div>
