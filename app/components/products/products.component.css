@@ -139,3 +139,15 @@
     height: 150px; /* Ajusta la altura para pantallas aún más pequeñas */
   }
 }
+@media (max-width: 767px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Media query para pantallas más grandes */
+@media (min-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

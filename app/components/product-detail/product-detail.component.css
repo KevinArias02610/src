@@ -51,3 +51,13 @@ button:hover {
 .cart-icon {
     margin-left: 2px;
 }
+@media (max-width: 767px) {
+    .modal-content {
+      max-width: 90%;
+      min-width: 90%;
+    }
+    
+    .modal-image {
+      width: 100%;
+    }
+  }
