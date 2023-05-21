@@ -19,11 +19,11 @@
       <p class="card-desc">{{product.description}}</p>
       <p class="card-price">{{product.price | currency}}</p>
     </div>
-    <button class="add-to-cart-btn">
+    <button class="add-to-cart-btn" (click)="actualizarCount()">
       <i class="icon-shopping-cart"></i>Agregar al carrito
     </button>
     <button class="see-detail-btn" (click)="openModal(product)">
-      <i class="icon-eye-open"></i> Ver detalle
+      <i class="icon-eye-open"></i> Detalle
     </button>
   </div>
 </div>

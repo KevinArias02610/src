@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Products } from 'src/app/interfaces/products.interface';
 import { ProductsService } from 'src/app/services/products.service';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-products',
@@ -24,9 +25,12 @@ export class ProductsComponent implements OnInit {
   public slideInterval: any;
   public filtro: string = '';
   @Input() searchChanged: EventEmitter<string> = new EventEmitter<string>();
-  
+  @Output() countUpdated = new EventEmitter<number>();
+  count: number = 23;
+
   constructor(
-    public _productsService: ProductsService
+    public _productsService: ProductsService,
+    private sharedDataService: SharedDataService
   ) { }
 
   ngOnInit(): void {
@@ -89,6 +93,10 @@ export class ProductsComponent implements OnInit {
     if(this.filtro == ''){
       this.divideProductosEnPaginas()
     }
+  }
+
+  actualizarCount() {
+    this.sharedDataService.setCount(this.count);
   }
 
 }
