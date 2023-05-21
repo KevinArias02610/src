@@ -3,14 +3,14 @@
   <button class="home-icon" (click)="redirectHome()"><i class="icon-home"></i></button>
   <div class="dropdown2" *ngIf="showDropdown">
     <ul class="dropdown2-menu">
-      <li *ngFor="let item of category">
-        <img [src]="item.image" alt="Product Image">
+      <li *ngFor="let item of productsCart">
+        <img [src]="item.images" alt="Product Image">
         <div class="item-details">
-          <h4>{{ item.name }}</h4>
-          <p>{{ item.name }}</p>
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.price | currency }}</p>
         </div>
         <div class="item-details">
-          <button><i class="icon-remove"></i> quitar</button>
+          <button (click)="deleteProductCart(item.id)"><i class="icon-remove"></i> quitar</button>
         </div>
       </li>
     </ul>

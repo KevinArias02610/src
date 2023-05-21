@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Products } from 'src/app/interfaces/products.interface';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -10,7 +12,9 @@ export class ProductDetailComponent implements OnInit {
   @Input() selectedElement: any;
   @Output() closeModal2: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor() { }
+  constructor(
+    private sharedDataService: SharedDataService
+  ) { }
 
   ngOnInit(): void {
     
@@ -18,5 +22,9 @@ export class ProductDetailComponent implements OnInit {
 
   closeModal() {
     this.closeModal2.emit();
+  }
+
+  actualizarCount(product: Products) {
+    this.sharedDataService.setProduct([product]);
   }
 }

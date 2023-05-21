@@ -138,3 +138,7 @@
       height: 150px; /* Ajusta la altura para pantallas aún más pequeñas */
     }
   }
+  .title{
+    display: flex;
+    justify-content: center;
+  }

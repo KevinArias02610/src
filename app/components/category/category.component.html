@@ -9,6 +9,9 @@
     </ng-container>
   </div>
 </div>
+<div class="title">
+  <h2>{{category}}</h2>
+</div>
 <hr>
 <div class="card-container">
   <div class="card" *ngFor="let product of paginatedProducts">
@@ -18,7 +21,7 @@
       <p class="card-desc">{{product.description}}</p>
       <p class="card-price">{{product.price | currency}}</p>
     </div>
-    <button class="add-to-cart-btn">
+    <button class="add-to-cart-btn" (click)="actualizarCount(product)">
       <i class="icon-shopping-cart"></i>Agregar al carrito
     </button>
     <button class="see-detail-btn" (click)="openModal(product)">

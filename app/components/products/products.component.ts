@@ -27,10 +27,11 @@ export class ProductsComponent implements OnInit {
   @Input() searchChanged: EventEmitter<string> = new EventEmitter<string>();
   @Output() countUpdated = new EventEmitter<number>();
   count: number = 23;
+  public arrayCart: Products[] = [];
 
   constructor(
     public _productsService: ProductsService,
-    private sharedDataService: SharedDataService
+    private sharedDataService: SharedDataService,
   ) { }
 
   ngOnInit(): void {
@@ -95,8 +96,8 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-  actualizarCount() {
-    this.sharedDataService.setCount(this.count);
+  actualizarCount(product: Products) {
+    this.sharedDataService.setProduct([product]);
   }
 
 }
